@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 19:19:26 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/10 11:43:51 by ie-laabb         ###   ########.fr       */
+/*   Created: 2021/11/13 01:24:27 by ie-laabb          #+#    #+#             */
+/*   Updated: 2021/11/13 01:24:35 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char *str, int c)
+t_list	*ft_lstnew(void *content)
 {
-	int				i;
-	unsigned char	ch;
+	t_list	*ptr;
 
-	i = 0;
-	ch = (unsigned char)c;
-	while (str[i])
-	{
-		if (ch == str[i])
-			return (&str[i]);
-		i++;
-	}
-	if (ch == str[i])
-		return (&str[i]);
-	return (0);
+	ptr = (t_list *)malloc(sizeof(t_list));
+	ptr->content = content;
+	ptr->next = NULL;
+	return (ptr);
 }
+/*
+ int main(void)
+{
+     t_list *l =  ft_lstnew((void*)"42");
+     printf("%s\n", (char *)l->content);
+}*/

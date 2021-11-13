@@ -40,13 +40,11 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 // int main()
 // {
-// 	char *s1 = "MZIRIBMZIRIBMZE123";
-// 	char *s2 = "MZIRIBMZE";
+// 	char *s1 = "dasd qw d123456|qds QW qdw SDSš";
+// 	char *s2 = "123456";
 // 	size_t max = strlen(s1);
-// 	char *i1 = strnstr(s1, s2, max);
-// 	char *i2 = ft_strnstr(s1, s2, max);
+// 	char *i1 = strnstr(s1, s2, 15);
+// 	char *i2 = ft_strnstr(s1, s2, 15);
 // 	printf("they ----> %s\n", i1);
 // 	printf("my   ----> %s\n", i2);
-// 	if (strcmp(i1, i2) == 0)
-// 		printf("1 \n");
 // }

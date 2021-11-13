@@ -6,17 +6,11 @@
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:30:36 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/05 19:32:11 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2021/11/09 11:35:24 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	salam(unsigned int i, char c)
-{
-	printf("%d  index %c\n" , i , c );
-	return (c + 32);
-}
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -38,10 +32,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	sub[i] = '\0';
 	return (sub);
-}
-
-int main()
-{
-	char str[] = "ABCDE";
-	printf("%s\n", ft_strmapi(str, salam));
 }

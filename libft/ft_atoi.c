@@ -6,47 +6,53 @@
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 18:55:23 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/05 18:55:25 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2021/11/13 01:27:41 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char	*str)
+int	rest_nbr(const char *str, int sign, int i)
 {
-	long	i;
-	int	res;
-	int	s;
+	long	res;
+	long	num;
 
-	i = 0;
 	res = 0;
-	s = 1;
-	while ((str[i] == '\t') || (str[i] == '\r')
-		|| (str[i] == ' ') || (str[i] == '\v')
-		|| (str[i] == '\f') || (str[i] == '\n'))
-		i++;
-	while ((str[i] == '-') || (str[i] == '+'))
-	{
-		if (str[i] == '-')
-			s = -s;
-		i++;
-	}
+	num = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = ((str[i] - '0') + (res * 10));
-		if ((str[i + 1] < '0') || (str[i + 1] > '9'))
-			return (res * s);
-		i++;
+		if (sign == -1)
+		{
+			if ((num < 0) || (res < num))
+				return (0);
+		}
+		if (sign == 1)
+		{
+			if ((num < 0) || (res < num))
+				return (-1);
+		}
+		num = (str[i++] - '0') + (num * 10);
 	}
-	return (0);
+	return (num * sign);
 }
 
+int	ft_atoi(const char	*str)
+{
+	long	i;
+	long	num;
+	int		sign;
 
-// int main()
-// {
-// 	char n[40] = "99999999999999999999999999";
-// 	int i1 = atoi(n);
-// 	int i2 = ft_atoi(n);
-// 	printf("they  ------->  %d\n", i1);
-// 	printf("my    ------->  %d\n", i2);
-// }
+	i = 0;
+	sign = 1;
+	while ((str[i] >= '\t' && str[i] <= '\r') || (str[i] == ' '))
+		i++;
+	if ((str[i] == '-') || (str[i] == '+'))
+	{
+		if (str[i] == '-')
+			sign = -sign;
+		i++;
+	}
+	num = rest_nbr(str, sign, i);
+	return (num);
+}

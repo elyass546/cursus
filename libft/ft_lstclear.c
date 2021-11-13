@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 19:19:26 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/10 11:43:51 by ie-laabb         ###   ########.fr       */
+/*   Created: 2021/11/13 15:54:08 by ie-laabb          #+#    #+#             */
+/*   Updated: 2021/11/13 18:52:34 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char *str, int c)
+void	ft_lstclear(t_list	**lst, void	(*del)(void*))
 {
-	int				i;
-	unsigned char	ch;
-
-	i = 0;
-	ch = (unsigned char)c;
-	while (str[i])
+	t_list	*nxt;
+	while (lst)
 	{
-		if (ch == str[i])
-			return (&str[i]);
-		i++;
+		nxt = lst->next;
+		ft_lstdelone(lst, del);
+		lst = next;
 	}
-	if (ch == str[i])
-		return (&str[i]);
-	return (0);
 }
+/*
+int   main()
+{
+	t_list *lst1 = ft_lstnew("salam");
+	t_list *lst2 = 
+	t_list *lst3
+	ft_lstadd_front(&lst, ft_lstnew("56"));
+    ft_lstadd_front(&lst, ft_lstnew("34"));
+ 	ft_lstadd_front(&lst, ft_lstnew("12"));	
+}*/

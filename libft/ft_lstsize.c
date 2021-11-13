@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 19:19:26 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/10 11:43:51 by ie-laabb         ###   ########.fr       */
+/*   Created: 2021/11/13 01:25:07 by ie-laabb          #+#    #+#             */
+/*   Updated: 2021/11/13 01:25:09 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char *str, int c)
+int	ft_lstsize(t_list	*lst)
 {
-	int				i;
-	unsigned char	ch;
+	int	i;
 
 	i = 0;
-	ch = (unsigned char)c;
-	while (str[i])
+	while (lst)
 	{
-		if (ch == str[i])
-			return (&str[i]);
+		lst = lst->next;
 		i++;
 	}
-	if (ch == str[i])
-		return (&str[i]);
-	return (0);
+	return (i);
 }

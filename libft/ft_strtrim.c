@@ -6,7 +6,7 @@
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:37:28 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/05 19:38:13 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:45:57 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		k;
 	char	*str;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (set[0] == '\0')
+	{
+		str = ft_strdup(s1);
+		return (str);
+	}
 	i = ft_first(s1, set);
 	j = ft_end(s1, set);
 	k = j - i + 1;

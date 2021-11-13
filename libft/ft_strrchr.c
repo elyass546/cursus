@@ -6,7 +6,7 @@
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:35:41 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/05 19:36:02 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2021/11/10 11:50:18 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 char	*ft_strrchr(char *str, int ch)
 {
-	int	i;
+	int				i;
+	unsigned char	c;
 
+	c = (unsigned char)ch;
 	i = ft_strlen(str);
 	if (!str)
 		return (NULL);
 	while (i > 0)
 	{
-		if (ch == str[i])
+		if (c == str[i])
 			return (&str[i]);
 		i--;
 	}
-	if (ch == str[i])
+	if (c == str[i])
 		return (&str[i]);
 	return (0);
 }

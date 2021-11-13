@@ -6,7 +6,7 @@
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:03:08 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/05 19:06:55 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2021/11/09 11:35:00 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ char	*ft_itoa(int n)
 {
 	char	*sub;
 	long	nbr;
-	nbr = (long)n;
 
+	nbr = (long)n;
 	sub = (char *)ft_calloc(sizeof(char), (nbr_len(nbr) + 1));
 	if (!sub)
 		return (NULL);

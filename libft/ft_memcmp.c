@@ -6,7 +6,7 @@
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:09:52 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/05 19:11:46 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2021/11/10 11:38:56 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*s01;
 	unsigned char	*s02;
-	size_t	i;
+	size_t			i;
 
 	s01 = (unsigned char *)s1;
 	s02 = (unsigned char *)s2;
@@ -29,4 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
- 

@@ -6,32 +6,51 @@
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:38:32 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/05 19:39:27 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:46:15 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*ft_strstock(char const *s, char *str, unsigned int start, size_t len)
+{
+	unsigned int	i;
+	unsigned int	b;
+
+	b = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (i >= start && b < len)
+		{
+			str[b] = s[i];
+			b++;
+		}
+		i++;
+	}
+	return (str);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
-	size_t	i;
+	char	*ptr;
 	size_t	a;
 
-	i = 0;
 	a = len + 1;
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
-		start = ft_strlen(s);
-	str = ft_calloc(sizeof(char), (len + 1));
+	if (a > ft_strlen(s))
+		a = ft_strlen(s) + 1;
+	str = ft_calloc(sizeof(char), (a));
 	if (!str)
 		return (NULL);
-	while (s[start + i] && i < len)
-	{
-		str[i] = s[start + i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	ptr = ft_strstock(s, str, start, len);
+	return (ptr);
 }
+
+// int main()
+// {
+// 	printf("%s\n", ft_strlcat(0, ":jkasfh:", 0));
+// 	printf("%s\n", strlcat(0, ":jkasfh:", 0));
+// }

@@ -6,7 +6,7 @@
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:42:00 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/05 20:31:02 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2021/11/13 16:03:27 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <string.h>
-# include <stdio.h>
 # include <fcntl.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -33,7 +31,7 @@ void	ft_putnbr_fd(int n, int fd);
 /************************************************************/
 
 int		ft_memcmp(const	void *s1, const	void *s2, size_t n);
-int		ft_strncmp(char *s1, char *s2, unsigned int n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char	*str);
 int		ft_isalnum(int c);
 int		ft_isalnum(int c);
@@ -54,13 +52,34 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strrchr(char *str, int ch);
 char	*ft_strchr(char *str, int c);
-char	*ft_strdup(char *src);
+char	*ft_strdup(const char *src);
 char	*ft_itoa(int n);
 
 /************************************************************/
 
-size_t	ft_strlcat(char *dest, char *src, size_t size);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
+
+/************************************************************/
+
+typedef struct s_list
+{
+	void				*content;
+	struct s_list		*next;
+}						t_list;
+
+void	ft_lstadd_front(t_list	**lst, t_list	*new);
+void	ft_lstadd_back(t_list	**lst, t_list	*new);
+void	ft_lstdelone(t_list	*lst, void	(*del)(void*));
+void	ft_lstclear(t_list	**lst, void	(*del)(void*));
+
+/****************************/
+
+t_list	*ft_lstnew(void	*content);
+t_list	*ft_lstlast(t_list	*lst);
+
+/****************************/
+int		ft_lstsize(t_list	*lst);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:18:38 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/05 19:18:49 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2021/11/10 11:42:27 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_putstr_fd(char *s, int fd)
 	size_t	i;
 
 	i = 0;
-	if(s)
+	if (s)
 	{
-		while (s[i] != '\0')
+		while (s[i])
 		{
 			ft_putchar_fd(s[i], fd);
 			i++;
