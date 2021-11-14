@@ -24,12 +24,12 @@ int	rest_nbr(const char *str, int sign, int i)
 		res = ((str[i] - '0') + (res * 10));
 		if (sign == -1)
 		{
-			if ((num < 0) || (res < num))
+			if (res / 10 != num)
 				return (0);
 		}
 		if (sign == 1)
 		{
-			if ((num < 0) || (res < num))
+			if (res / 10 != num)
 				return (-1);
 		}
 		num = (str[i++] - '0') + (num * 10);

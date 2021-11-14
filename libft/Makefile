@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-AR = ar rcs
+AR = ar rc
 
 RM = rm -f
 

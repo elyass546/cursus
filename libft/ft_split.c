@@ -51,7 +51,7 @@ char	*ft_strndup(const char *s, int n)
 	return (str);
 }
 
-char	**salam(char **str, char const *s, int size, char c)
+char	**ft_stock(char **str, char const *s, int size, char c)
 {
 	int	i;
 	int	a;
@@ -87,6 +87,6 @@ char	**ft_split(char const *s, char c)
 	str = ft_calloc(sizeof(char *), (b + 1));
 	if (!str)
 		return (NULL);
-	str = salam(str, s, b, c);
+	str = ft_stock(str, s, b, c);
 	return (str);
 }
