@@ -6,7 +6,7 @@
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:42:00 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/13 16:03:27 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2021/11/15 13:13:59 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	*ft_memmove(void *dst, const void *src, size_t len);
-void	*ft_memset(void *ptr, size_t value, size_t count);
+void	*ft_memset(void *ptr, int value, size_t count);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
@@ -50,8 +50,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
-char	*ft_strrchr(char *str, int ch);
-char	*ft_strchr(char *str, int c);
+char	*ft_strrchr(const char *str, int ch);
+char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *src);
 char	*ft_itoa(int n);
 
