@@ -31,13 +31,3 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	dest[j] = '\0';
 	return (src_len);
 }
-
-/*int main()
-{
-	char	s1[] = "";
-	char	s2[] = "";
-	char	s3[] = "salam";
-	char	s4[] = "salam";
-	printf("%zu    %s\n", ft_strlcpy(s1, s3, 5), s1);
-	printf("%lu    %s\n", strlcpy(s2, s4, 5), s2);
-}*/

@@ -48,9 +48,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ptr = ft_strstock(s, str, start, len);
 	return (ptr);
 }
-
-// int main()
-// {
-// 	printf("%s\n", ft_strlcat(0, ":jkasfh:", 0));
-// 	printf("%s\n", strlcat(0, ":jkasfh:", 0));
-// }

@@ -12,22 +12,22 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *haystack, int needle)
 {
-	int				i;
-	unsigned char	ch;
-	unsigned char	s;
+	int		i;
+	char	c;
+	char	*str;
 
-	s = (unsigned char)str;
-	ch = (unsigned char)c;
 	i = 0;
-	while (s[i])
+	str = (char *)haystack;
+	c = (char) needle;
+	while (str[i])
 	{
-		if (ch == s[i])
-			return (&s[i]);
+		if (c == str[i])
+			return (&str[i]);
 		i++;
 	}
-	if (ch == s[i])
-		return (&s[i]);
+	if (c == str[i])
+		return (&str[i]);
 	return (0);
 }

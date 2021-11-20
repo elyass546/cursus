@@ -18,11 +18,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*s02;
 	size_t	i;
 
-	if (src == dest || n == 0)
+	i = 0;
+	if (!dest && !src)
+		return (NULL);
+	if ((!dest || !src) && n == 0)
 		return (dest);
 	s01 = (char *)dest;
 	s02 = (char *)src;
-	i = 0;
 	while (i < n)
 	{
 		s01[i] = s02[i];
@@ -30,16 +32,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
-#include <stdio.h>
-int main()
-{
-  char  dest1[] = "123456789";
-  char  dest2[] = "123456789";
-  char  src[] = "aa";
-//   memcpy(NULL, NULL, 5);
-  //ft_memcpy(dest2, src, 0);
-//   printf("sd -------> %s\n", dest1);
-//   printf("my -------> %s\n", dest2);
-printf("%s\n", ft_memcpy(NULL, NULL, 5));
-}*/

@@ -12,58 +12,51 @@
 
 #include "libft.h"
 
-int	nbr_len(long n)
+static char	*nbr_stock(int n, char *sub, int nbr_len)
 {
-	int	i;
+	long int	nb;
 
-	i = 1;
+	nb = n;
+	if (n == 0)
+		sub[0] = 48;
 	if (n < 0)
 	{
-		n = -n;
-		i++;
-	}
-	while (n > 9)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
-}
-
-char	*nbr_stock(char *sub, long n)
-{
-	long	nb;
-	int		i;
-	int		j;
-
-	i = nbr_len(n) - 1;
-	nb = (long)n;
-	j = i + 1;
-	if (nb < 0)
-	{
-		nb = -nb;
 		sub[0] = '-';
+		nb *= -1;
 	}
-	while (nb > 9)
+	while (nbr_len >= 0 && nb > 0)
 	{
-		sub[i] = nb % 10 + 48;
-		nb = nb / 10;
-		i--;
+		sub[nbr_len] = nb % 10 + 48;
+		nb /= 10 ;
+		nbr_len--;
 	}
-	sub[i] = nb + 48;
-	sub[j] = '\0';
 	return (sub);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*sub;
-	long	nbr;
+	int		nbr_len;
+	int		nb;
 
-	nbr = (long)n;
-	sub = (char *)ft_calloc(sizeof(char), (nbr_len(nbr) + 1));
+	nb = n;
+	nbr_len = 0;
+	if (nb < 0)
+	{
+		nb *= -1;
+		nbr_len++;
+	}
+	if (nb == 0)
+		nbr_len = 1;
+	while (nb != 0)
+	{
+		nb = nb / 10;
+		nbr_len++;
+	}
+	sub = (char *)ft_calloc(sizeof(char), nbr_len + 1);
 	if (!sub)
 		return (NULL);
-	nbr_stock(sub, nbr);
+	nbr_len--;
+	nbr_stock(n, sub, nbr_len);
 	return (sub);
 }

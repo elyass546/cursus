@@ -14,12 +14,12 @@
 
 char	*ft_strrchr(const char *str, int ch)
 {
-	int				i;
-	unsigned char	c;
-	unsigned char	s;
+	int		i;
+	char	c;
+	char	*s;
 
-	s = (unsigned char)str;
-	c = (unsigned char)ch;
+	s = (char *)str;
+	c = (char)ch;
 	i = ft_strlen(str);
 	if (!s)
 		return (NULL);

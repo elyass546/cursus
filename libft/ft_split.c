@@ -26,7 +26,6 @@ static int	ft_count_words(const char *s, char c)
 			while (s[i] != c && s[i] != '\0')
 				i++;
 			j++;
-			i--;
 		}
 		i++;
 	}

@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ie-laabb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 15:27:47 by ie-laabb          #+#    #+#             */
-/*   Updated: 2021/11/13 18:14:14 by ie-laabb         ###   ########.fr       */
+/*   Created: 2021/11/13 01:22:20 by ie-laabb          #+#    #+#             */
+/*   Updated: 2021/11/13 01:23:17 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list	*lst, void (*del)(void*))
+t_list	*ft_lstlast(t_list	*lst)
 {
-	del (lst->content);
-	free(lst);
+	while (lst)
+	{
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
+	}
+	return (0);
 }

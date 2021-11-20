@@ -31,14 +31,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-
-// int main()
-// {
-// 	// check(ft_memchr(s, 2 + 256, 3) == s + 2);
-// 	char s[] = {0, 1, 2 ,3 ,4 ,5};
-// 	// char	c = NULL;
-// 	char	*s1 = ft_memchr(s, 2 + 256, 3);
-// 	char	*s2 = memchr(s, 2 + 256 , 3);
-// 	printf("my   ------->  %s\n", s1);
-// 	printf("they ------->  %s\n", s2);
-// }
